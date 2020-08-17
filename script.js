@@ -1,4 +1,3 @@
-     
          const searchSong = document.getElementById('search-criterion');
          const searchButton = document.getElementById('searchBtn');
          const showResult = document.getElementById('showSearchResult');
@@ -13,12 +12,10 @@
             fetch(`${apiLink}${searchSong.value}`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data.data)
                     createDivBySearchResult(data.data);
                 })
         }
         
-
         const createDivBySearchResult = (totalResult) => { 
             for (let i = 0; i < totalResult.length; i++) {
                 if (i > 9) {
