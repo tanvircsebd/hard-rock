@@ -45,14 +45,6 @@
         const showLyric = document.getElementById('showDesiredlyrics');
         const lyric = 'https://api.lyrics.ovh/v1/';
         
-        const getLyric = (artist, title) => { 
-            fetch(`${lyric}/${artist}/${title}`)
-                .then(res => res.json())
-                .then(data => {
-                    displayLyrics(title, artist, data.lyrics);
-                })
-        }
-
         const displayLyrics = (title, artist, lyric = 'Lyric not available! Please try another one.') => {
             showLyric.innerHTML = ` <button class="btn go-back">&lsaquo;</button>
                                     <h2 class="text-success mb-4">${title} - ${artist}</h2>
